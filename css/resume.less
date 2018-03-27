@@ -1,0 +1,179 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration:none ;
+    border: 0;
+}
+.margintop(){
+    margin-top: 15px;
+}
+.center(){
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.box(@w,@h,@c){
+    width: @w;
+    height: @h;
+    background-color: @c;
+    margin: 2px;
+}
+html{
+    width: 100%;
+    height: 100%;
+
+    body{
+    width: 100%;
+    height: 100%;
+
+    #first{
+        height: 100%;
+        background: darkcyan;
+        ul{
+            position: fixed;
+            right: 0;
+            top: 0;
+            list-style: none;
+            z-index: 99999;
+            li{
+                float: left;
+                width:100px ;
+                height: 40px;
+                line-height: 40px;
+                border: 1px solid rgba(255,255,255,.3);
+                text-align: center;
+                &:hover{
+                    background:green ;
+                }
+                a{
+                  color: black;
+                  font-weight: bold;
+                }
+            }
+        }
+        .info{
+            .center;
+            color:skyblue ;
+            img{
+                border-radius: 50%;
+            }
+            h3{
+                .margintop
+            }
+            h2{
+                .margintop
+            }
+            h4{
+                .margintop
+            }
+        }
+       #fengche{
+            width: 108px;
+            height: 108px;
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            z-index: 99999;
+            transition: 3600s linear;
+            div:nth-child(1){
+               .box(50px,50px,red);
+                border-radius: 0 50%;
+                float: left;    
+            }
+            div:nth-child(2){
+                .box(50px,50px,yellow);
+                border-radius: 50% 0;
+                float: left;
+            }
+             div:nth-child(3){
+                .box(50px,50px,blue);
+                border-radius: 50% 0;
+                float: left;
+            }
+             div:nth-child(4){
+                .box(50px,50px,green);
+                border-radius:0 50% ;
+                float: left;
+            }
+        }
+        #next{
+            width: 20%;
+            height: 100px;
+            background: rgba(255,255,255,.1);
+            position: fixed;
+            bottom: 0;
+            left: 40%;
+            z-index:99999; 
+            &:hover{
+                background:rgba(255,255,255,.3) ;
+            }
+        }
+        #prev{
+            width: 20%;
+            height: 100px;
+            background: rgba(255,255,255,.1);
+            position: fixed;
+            top: 0;
+            left: 40%;
+            z-index:99999; 
+            &:hover{
+                background:rgba(255,255,255,.3) ;
+            }
+        }
+    }
+    #second{
+        position: relative;
+        background: darkgoldenrod;
+        height: 100%;
+        .second{
+            .center;
+            color: darkolivegreen;
+            h1{
+                font-size: 40px;
+                line-height: 200px;
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                background:darkkhaki ;
+                margin: 0 auto;
+            }
+            .skill{
+                margin: 0 auto;
+                display: flex;
+                flex-flow: row wrap;
+                align-content: space-between;
+                div{
+                    width: 150px;
+                    height: 150px;
+                    border-radius: 50%;
+                    font-size: 20px;
+                    line-height: 150px;
+                    background: wheat;
+                }
+            }
+            
+        }
+        
+    }
+    #third{
+        position: relative;
+        height: 100%;
+        background: darkseagreen;
+        text-align: center;
+        .third{
+            .center;
+        }
+    }
+}
+
+    #four{
+        position: relative;
+        height: 100%;
+        background: lightcoral;
+        .four{
+            .center
+        }
+    }
+}
