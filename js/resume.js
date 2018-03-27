@@ -17,7 +17,7 @@ window.onload = function(){
         html.scrollTop = 0;  //ie下
         document.body.scrollTop = 0;  //非ie
  		}
-   	   lis[0].style.backgroundColor = 'green'
+   
 =======
        
      
