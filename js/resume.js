@@ -10,7 +10,7 @@ window.onload = function(){
        var timer1
        
      
-       	
+       	lis[num].style.backgroundColor = 'green'
 
        for (var i = 0; i < lis.length; i++) {
        		lis[i].index = i
