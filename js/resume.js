@@ -10,20 +10,13 @@ window.onload = function(){
    	   var point = 0
        var timer
        var timer1
-<<<<<<< HEAD
 	   
 	   window.onbeforeunload = function(){
           //刷新后页面自动回到顶部
         html.scrollTop = 0;  //ie下
         document.body.scrollTop = 0;  //非ie
  		}
-   
-=======
-       
-     
-       	lis[num].style.backgroundColor = 'green'
-
->>>>>>> 5a11278fe52ac9065bde535215e187f26574e60d
+   	   lis[0].style.backgroundColor = 'green'
        for (var i = 0; i < lis.length; i++) {
        		lis[i].index = i
        		lis[i].onclick = function  () { 
