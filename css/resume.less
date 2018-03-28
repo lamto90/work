@@ -20,6 +20,10 @@
     background-color: @c;
     margin: 2px;
 }
+@keyframes xuan{
+    from{transform: rotate(0);}
+    to{transform: rotate(360deg);}
+            }
 html{
     width: 100%;
     height: 100%;
@@ -76,7 +80,7 @@ html{
             right: 20px;
             bottom: 20px;
             z-index: 99999;
-            transition: 3600s linear;
+            animation: xuan 3s linear infinite;
             div:nth-child(1){
                .box(50px,50px,red);
                 border-radius: 0 50%;
