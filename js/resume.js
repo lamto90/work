@@ -40,7 +40,6 @@ window.onload = function(){
  					}
  				}
  				},1000/60)
-				this.style.backgroundColor = 'green'
 				point = num
 				return false
 				
