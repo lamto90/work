@@ -88,7 +88,5 @@ window.onload = function(){
    			lis[point].style.backgroundColor = 'green'
    		}	
 		
-		setTimeout(function  () {
-			fengche.style.transform = 'rotate(432000deg)'
-		},2000)
+		
 }
