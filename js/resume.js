@@ -103,8 +103,8 @@ window.onload = function(){
 		}
 		
 		
-		prev.style.left = (window.innerWidth - prev.offsetWidth)/2+'px'
-		next.style.left = (window.innerWidth - next.offsetWidth)/2+'px'
+		prev.style.left = (document.body.clientWidth - prev.offsetWidth)/2+'px'
+		next.style.left = (document.body.clientWidth - next.offsetWidth)/2+'px'
 		
 		
 }
