@@ -4,14 +4,6 @@
   text-decoration: none ;
   border: 0;
 }
-html {
-  width: 100%;
-  height: 100%;
-}
-html body {
-  width: 100%;
-  height: 100%;
-}
 @keyframes xuan {
   from {
     transform: rotate(0);
@@ -20,9 +12,53 @@ html body {
     transform: rotate(360deg);
   }
 }
+@keyframes jump {
+  0% {
+    transform: scale(1) rotate(0);
+  }
+  30% {
+    transform: scale(1.5) rotate(120deg);
+  }
+  60% {
+    transform: scale(0.5) rotate(240deg);
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+  }
+}
+@keyframes box {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50px);
+  }
+}
+html {
+  width: 100%;
+  height: 100%;
+}
+html body {
+  width: 100%;
+  height: 100%;
+}
 html body #first {
   height: 100%;
   background: darkcyan;
+}
+html body #first .fld {
+  width: 40px;
+  height: 100%;
+  border: 1px solid;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 99999;
+  overflow: hidden;
+}
+html body #first .fld .inner {
+  height: 2000px;
+  background: repeating-linear-gradient(45deg, #ea7a22, #ea7a22 10px, #342356 10px, #342356 20px);
 }
 html body #first ul {
   position: fixed;
@@ -56,15 +92,22 @@ html body #first .info {
 }
 html body #first .info img {
   border-radius: 50%;
+  animation: xuan 5s 4s infinite linear;
+}
+html body #first .info h1 {
+  animation: jump 4s linear;
 }
 html body #first .info h3 {
   margin-top: 15px;
+  animation: jump 4s linear;
 }
 html body #first .info h2 {
   margin-top: 15px;
+  animation: jump 4s linear;
 }
 html body #first .info h4 {
   margin-top: 15px;
+  animation: jump 4s linear;
 }
 html body #first #fengche {
   width: 108px;
@@ -160,12 +203,13 @@ html body #second .second .skill {
   align-content: space-between;
 }
 html body #second .second .skill div {
-  width: 150px;
-  height: 150px;
+  width: 130px;
+  height: 130px;
   border-radius: 50%;
   font-size: 20px;
-  line-height: 150px;
+  line-height: 130px;
   background: wheat;
+  margin: 10px;
 }
 html body #third {
   position: relative;
