@@ -6,6 +6,9 @@ window.onload = function(){
        var prev = document.getElementById('prev')
        var html = document.documentElement
        var fengche = document.getElementById('fengche')
+       var inner = document.querySelector('#first .fld .inner')
+       var divS = document.querySelectorAll('#second .skill div')
+       var flag = 0
        var num = 0
    	   var point = 0
        var timer
@@ -86,6 +89,20 @@ window.onload = function(){
    			}
    			lis[point].style.backgroundColor = 'green'
    		}	
+		
+		setInterval(function  () {
+			flag ++
+			if (flag >= 600) {
+				flag = 0
+			}
+			inner.style.marginTop = -flag +'px'
+		},1000/60)
+		
+		for (var i = 0; i < divS.length; i++) {
+			divS[i].style.animation = 'box .5s '+(i*300)+'ms infinite alternate linear'
+		}
+		
+		
 		
 		
 }
