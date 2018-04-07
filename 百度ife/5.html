@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.clearfix:after{
+				content: '';
+				clear: both;
+				display: table;
+			}
+			ul{
+				list-style: none;
+			}
+			li{
+				background: red;
+				float: left;
+				margin-left: 5px;
+				padding: 0 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="number" placeholder="请输入10-100之间的数字"  /> <button>左侧入</button> <button>右侧入</button>  &nbsp;&nbsp; <button>左侧出</button> <button>右侧出</button>
+		
+		<ul class="clearfix">
+			<li>10</li>
+			<li>3</li>
+			<li>7</li>
+			<li>12</li>
+			<li>11</li>
+			<li>30</li>
+		</ul>
+		<button id="sort">排序</button>
+	</body>
+	<script type="text/javascript">
+		var arr = []
+		var input = document.querySelector('input')
+		var liNodes = document.getElementsByTagName('li')
+		var ul = document.querySelector('ul')
+		var btns = document.getElementsByTagName('button')
+		var sort_btn = document.getElementById('sort')
+		
+		
+		btns[0].onclick = function  () {
+			if (input.value < 10 || input.value > 100) {
+				alert('请输入10-100之间的数字')
+			} else{
+				var liNodes = document.querySelectorAll('ul li')
+				if (liNodes.length == 60) {
+					alert('最多只能添加至60个')
+					return
+				}
+				var value = document.querySelector('input').value
+				var li = document.createElement('li')
+				li.innerHTML = value
+				li.style.height = input.value +'px'
+				ul.insertBefore(li,liNodes[0])
+			}	
+		}
+		
+		btns[1].onclick = function  () {
+			if (input.value < 10 || input.value > 100) {
+				alert('请输入10-100之间的数字')
+			} else{
+				var liNodes = document.querySelectorAll('ul li')
+				if (liNodes.length == 60) {
+					alert('最多只能添加至60个')
+					return
+				}
+				var value = document.querySelector('input').value
+				var li = document.createElement('li')
+				li.innerHTML = value
+				li.style.height = (input.value ) +'px'
+				ul.appendChild(li)
+			}
+		}
+		
+		btns[2].onclick = function  () {
+				var liNodes = document.getElementsByTagName('li')		
+				alert('您要删除的是：'+liNodes[0].innerHTML+'！')
+				ul.removeChild(liNodes[0])
+		}
+		
+		btns[3].onclick = function  () {
+				var liNodes = document.getElementsByTagName('li')
+				alert('您要删除的是：'+liNodes[liNodes.length-1].innerHTML+'！')
+				ul.removeChild(liNodes[liNodes.length-1])
+		}
+		
+		ul.onclick = function  (event) {
+			event = event || window.event
+			if (event.target.tagName.toLowerCase() == 'li') {
+				alert('您要删除的是：'+event.target.innerHTML+'！')
+				ul.removeChild(event.target)
+			}
+			
+		}
+		
+		for (var i = 0; i < liNodes.length; i++) {
+			liNodes[i].style.height = liNodes[i].innerHTML + 'px'
+		}
+		
+		sort_btn.onclick = function () {
+			for (var i = 0; i < liNodes.length; i++) {
+				arr.push(liNodes[i])
+			}
+			arr.sort(function  (a,b) {
+				return a.innerHTML - b.innerHTML
+			})
+			for (var i = 0; i < arr.length; i++) {
+				ul.appendChild(arr[i])
+			}
+		}
+		
+	</script>
+</html>
