@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>模糊匹配</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul{
+				list-style: none;
+			}
+			li{
+				background: red;
+				float: left;
+				margin-left: 5px;
+				padding: 0 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="number"  /> <button>左侧入</button> <button>右侧入</button>  &nbsp;&nbsp; <button>左侧出</button> <button>右侧出</button>
+		<ul>
+			<li>10</li>
+			<li>3</li>
+			<li>7</li>
+			<li>12</li>
+			<li>11</li>
+			<li>30</li>
+		</ul>
+		<button id="search">查询</button>
+	</body>
+	<script type="text/javascript">
+		var input = document.querySelector('input')
+		var liNodes = document.getElementsByTagName('li')
+		var ul = document.querySelector('ul')
+		var arr = []
+		var btns = document.getElementsByTagName('button')
+		var search = document.getElementById('search')
+		
+		btns[0].onclick = function  () {
+			var value = document.querySelector('input').value
+			var li = document.createElement('li')
+			li.innerHTML = value
+			ul.insertBefore(li,liNodes[0])
+		}
+		
+		btns[1].onclick = function  () {
+			var value = document.querySelector('input').value
+			var li = document.createElement('li')
+			li.innerHTML = value
+			ul.appendChild(li)
+		}
+		
+		btns[2].onclick = function  () {
+			var liNodes = document.getElementsByTagName('li')		
+			alert('您要删除的是：'+liNodes[0].innerHTML+'！')
+			ul.removeChild(liNodes[0])
+		}
+		
+		btns[3].onclick = function  () {
+			var liNodes = document.getElementsByTagName('li')
+			alert('您要删除的是：'+liNodes[liNodes.length-1].innerHTML+'！')
+			ul.removeChild(liNodes[liNodes.length-1])
+		}
+		
+		ul.onclick = function  (event) {
+			event = event || window.event
+			event.target.nodeName.toLowerCase() == 'li'
+			alert('您要删除的是：'+event.target.innerHTML+'！')
+			ul.removeChild(event.target)
+		}
+		
+		search.onclick = function  () {
+			for (var i = 0; i < liNodes.length; i++) {
+				if (liNodes[i].innerHTML.indexOf(input.value) >= 0) {
+					liNodes[i].style.display = ''
+				}
+				else{
+					liNodes[i].style.display = 'none'
+				}
+			}
+		}
+
+		input.oninput = function  () {
+			for (var i = 0; i < liNodes.length; i++) {
+				if (input.value == '') {
+					liNodes[i].style.display = ''
+				}
+			}
+		}
+		
+	</script>
+</html>
