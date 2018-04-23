@@ -2,6 +2,7 @@ $(function  () {
 	var $lis = $('#first>ul>li')
 	var point = Math.floor($(document).scrollTop()/$(document.body).height())
 	var left = ($('body').width()-$('#prev').width())/2
+	var top = 0 
 	$lis.eq(point).css('background','green')
 	
 	$lis.each(function  (index,item) {
@@ -55,8 +56,25 @@ $(function  () {
 	})
 	
 	$('#prev').css('left',left)
-
 	$('#next').css('left',left)
+	
+	setInterval(function  () {
+		top--
+		if (top<=-600) {
+			top = 0
+		}
+		$('#first .inner').css('top',top)
+	},1000/60)
+	
+	
+	skill()
+	function skill () {
+		var $divS = $('#second .skill>div')
+		$divS.each(function  (index,item) {
+			$(this).css('animation','box .5s '+(index*300)+'ms infinite alternate linear')
+		})
+	}
+	
 
 	
 })
